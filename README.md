@@ -1,5 +1,5 @@
 # LookMyBarber
-sinan = ceo of company ("lookbybarber")
+sinan =  company ettavum valya officer("lookbybarber")
 
-Hussain = small founder
+Hussain = small founder udayip
 riluvan = employee 
