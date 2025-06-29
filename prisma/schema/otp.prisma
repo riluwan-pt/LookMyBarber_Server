@@ -1,0 +1,11 @@
+model Otp {
+  id        String   @id @default(uuid())
+  email     String
+  code      String
+  context   String?   // "signup", "login", etc.
+  meta      String?   // hashed password (for signup)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([email])
+}

@@ -16,7 +16,7 @@ export const getBarshopById = async (req: Request, res: Response): Promise<void>
   try {
     const { id } = req.params;
     const barshop = await prisma.barshop.findUnique({
-      where: { id: Number(id) },
+      where: { id: String(id) },
     });
 
     if (!barshop) {
@@ -65,7 +65,7 @@ export const updateBarshop = async (req: Request, res: Response) => {
 
   try {
     const updated = await prisma.barshop.update({
-      where: { id: Number(id) },
+      where: { id: String(id) },
       data,
     });
 
@@ -81,7 +81,7 @@ export const deleteBarshop = async (req: Request, res: Response) => {
 
   try {
     await prisma.barshop.delete({
-      where: { id: Number(id) },
+      where: { id: String(id) },
     });
 
     res.status(204).send(); 

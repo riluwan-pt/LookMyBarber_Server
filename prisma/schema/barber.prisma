@@ -1,0 +1,17 @@
+model Barshop {
+  id        String   @id @default(uuid()) // ✅ Changed from Int to String
+  userId    String   @unique @map("user_id")
+  name      String
+  address   String
+  city      String
+  state     String
+  zipCode   String   @map("zip_code")
+  phone     String
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user      User     @relation("UserBarshop", fields: [userId], references: [id])
+
+  @@map("barshop")
+}

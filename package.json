@@ -11,7 +11,11 @@
     "dev": "ts-node-dev --respawn src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
-    "prisma": "prisma"
+    "prisma": "prisma",
+    "prisma:merge": "node merge-schema.js",
+  "prisma:migrate": "npm run prisma:merge && npx prisma migrate dev --name",
+  "prisma:generate": "npm run prisma:merge && npx prisma generate"
+
   },
   "keywords": [],
   "author": "",
